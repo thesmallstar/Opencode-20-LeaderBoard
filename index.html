@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Opencode'20 leaderboard</title>
+  <title> Opencode'20 leaderboard </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -12,10 +12,10 @@
 <body>
 
 <div class="container">
-  <h2>Ugly Board</h2>
-              <p> I never saw a more ugly leaderboard, we need to work on this! Dah!</p>
+  <h2><center>Ugly Board</center></h2>
+              <p><center> I never saw a more ugly leaderboard, we need to work on this! Dah!</center></p>
   <div id="loader">
-    <img src="https://lingojam.com/img/loading_nice.gif" style="width: 15%;"/>
+    <center><img src="https://lingojam.com/img/loading_nice.gif" style="width: 15%;"/></center>
   </div>
   <table id="leaderboard">
     
@@ -47,10 +47,10 @@ function addToTable(arr) {
             name=arr[i].username;
             points= arr[i].points;
             if (0<=i && i<3){
-              var markup = "<tr><td><strong>"+ (i + 1) + "</strong></td><td><strong>" + "&nbsp;" + name + "</strong></td><td><strong>" + "&nbsp;" + points + "</strong></td></tr>";
+              var markup = "<tr><td><strong><center>"+ (i + 1) + "</center></strong></td><td><strong><center>" + "&nbsp;" + name + "</center></strong></td><td><strong><center>" + "&nbsp;" + points + "</center></strong></td></tr>";
             }
             else{
-              var markup = "<tr><td>"+ (i + 1) + "</td><td> " + "&nbsp;" + name + "</td><td> " + "&nbsp;" + points + "</td></tr>";
+              var markup = "<tr><td><center>"+ (i + 1) + "</center></td><td><center>" + "&nbsp;" + name + "</center></td><td><center> " + "&nbsp;" + points + "</center></td></tr>";
             }
             $("table tbody").append(markup);
     }
