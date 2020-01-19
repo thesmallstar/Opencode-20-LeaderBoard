@@ -441,10 +441,20 @@ h6,
   line-height: 1.2;
 }
 
-.display-4 {
-  font-size: 2.5rem;
+  .display-4 {
+  font-size: 2.1rem;
   font-weight: 300;
   line-height: 1.2;
+}
+
+
+@media (max-width:500px)
+{
+  .display-4{
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
 }
 
 hr {
