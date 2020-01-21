@@ -21,12 +21,15 @@ function addToTable(arr) {
     for(i = 0; i < arr.length; i++) {
             name=arr[i].username;
             points= arr[i].points;
+            var a="https://www.github.com/";
+            link=a.concat(name);
+            var result = name.link(link);
             if (0<=i && i<3){
-              var markup = "<tr><td><strong>"+ (i + 1) + "</strong></td><td><strong>" + "&nbsp;" + name + "</strong></td><td><strong>" + "&nbsp;" + points + "</strong></td></tr>";
+              var markup = "<tr><td><strong>"+ (i + 1) + "</strong></td><td><strong>" + "&nbsp;" + result + "</strong></td><td><strong>" + "&nbsp;" + points + "</strong></td></tr>";
             }
             else{
-              var markup = "<tr><td>"+ (i + 1) + "</td><td> " + "&nbsp;" + name + "</td><td> " + "&nbsp;" + points + "</td></tr>";
-            }
+
+              var markup = "<tr><td>"+ (i + 1) + "</td><td>" + "&nbsp;" + result + "</td><td> " + "&nbsp;" + points + "</td></tr>";            }
             $("table tbody").append(markup);
     }
 }
