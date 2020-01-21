@@ -1,49 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Opencode'20 leaderboard</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
-  <script type="text/javascript" src="./css/bootstrap.bundle.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="shortcut icon" href="https://opencodeiiita.github.io/dist/images/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <style>
-  	
-  </style>
+    <title>Opencode'20 leaderboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+    <script type="text/javascript" src="./css/bootstrap.bundle.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="https://opencodeiiita.github.io/dist/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+
+    </style>
 
 </head>
-<body class="display-4">
 
-<div class=navbar>
-  <a href="index.html"> 
-    <i class="material-icons" style="font-size:45px; color:black">home</i> 
-  </a>
-  <i class="material-icons" style="font-size:45px;">search</i>
-</div>
+<body class="display-4" style="background-color: gold;">
 
-<div class="container">
+    <div class=navbar style="border-radius: 0%; background-color: #212529;">
+        <a href="index.html">
+            <i class="material-icons" style="font-size:45px; color:white">home</i>
+        </a>
+        <a href="search.html">
+            <i class="material-icons" style="font-size:45px; color:white">search</i>
+        </a>
+    </div>
+
+    <div class="container">
+
+        <center>
+            <h1 class="display-2"> <strong>OPENCODE'20 LEADERBOARD</strong></h1>
+            <br>
+        </center>
+
+        <center>
+            <div id="loader">
+                <img src="https://lingojam.com/img/loading_nice.gif" style="width: 15%;" />
+            </div>
+        </center>
+        <table id="leaderboard" class="table table-hover table-dark">
 
 
+        </table>
 
-  <center>
-  	<div class="bg-light border border-danger rounded mb-5">
-   <img src="img\Leaderboard.png" alt="leaderboard logo" width="120 px" style=" margin: 20px 30px;">
-   </div>
-</center>
-             
-  <center><div id="loader">
-    <img src="https://lingojam.com/img/loading_nice.gif" style="width: 15%;"/>
-  </div></center>
-	<table id="leaderboard" class="table table-success table-bordered table-hover border border-dark rounded w-100">
+    </div>
 
-    
-  </table>
-</div>
-
-<script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>
