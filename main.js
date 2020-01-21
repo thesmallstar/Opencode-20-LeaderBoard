@@ -12,6 +12,7 @@ xmlhttp.onreadystatechange = function() {
         '<thead><tr><th>Rank</th><th>Github ID</th><th>Points</th></tr></thead><tbody></tbody>'; //same as original structure
         document.getElementById('loader').innerHTML = '';
         addToTable(myArr);
+        addTop5images(myArr);
     }
 };
 
@@ -39,4 +40,49 @@ function sortByPoints(){
          return -1;
       return 0;
    }
+}
+
+function addTop5images(arr){
+   arr.sort(sortByPoints());
+      var div = document.getElementById('fourth'); 
+      div.innerHTML = '';
+      var img = document.createElement('img'); 
+      img.src = arr[3].img; 
+      img.style.height = '150px';
+      img.style.width = '150px';
+      div.appendChild(img);
+      div.append("FOURTH");
+      var div = document.getElementById('third'); 
+      div.innerHTML = '';
+      var img = document.createElement('img'); 
+      img.src = arr[2].img; 
+      img.style.height = '150px';
+      img.style.width = '150px';
+      div.appendChild(img);
+      div.append("THIRD");
+      var div = document.getElementById('first'); 
+      div.innerHTML = '';
+      var img = document.createElement('img'); 
+      img.src = arr[0].img; 
+      img.style.height = '150px';
+      img.style.width = '150px';
+      div.appendChild(img);
+      div.append("FIRST");
+      var div = document.getElementById('second'); 
+      div.innerHTML = '';
+      var img = document.createElement('img'); 
+      img.src = arr[1].img; 
+      img.style.height = '150px';
+      img.style.width = '150px';
+      div.appendChild(img);
+      div.append("SECOND");
+      var div = document.getElementById('fifth'); 
+      div.innerHTML = '';
+      var img = document.createElement('img'); 
+      img.src = arr[4].img; 
+      img.style.height = '150px';
+      img.style.width = '150px';
+      div.appendChild(img);
+      div.append("FIFTH");
+      
 }
