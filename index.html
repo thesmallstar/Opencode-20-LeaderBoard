@@ -43,14 +43,6 @@ xmlhttp.onreadystatechange = function() {
 function addToTable(arr) {
     arr.sort(sortByPoints());
     var i;
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      myFunction(this);
-    }
-  };
-  xmlhttp.open("GET", url , true);
-  xmlhttp.send();
     for(i = 0; i < arr.length; i++) {
             name=arr[i].username;
             points= arr[i].points;
