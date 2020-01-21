@@ -238,7 +238,18 @@ label {
 }
 
 button {
-    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    color: rgb(23, 22, 36);
+    text-align: center;
+    font-size: 28px;
+    font-weight: 400;
+    padding: 0px 20px;
+    width: inherit;
+    height: fit-content;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 20px;
 }
 
 button:focus {
@@ -434,7 +445,7 @@ h6,
 
 .display-2 {
     font-size: 5.5rem;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1.2;
 }
 
@@ -4569,7 +4580,7 @@ input[type="button"].btn-block {
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 1rem 1rem;
+    padding: 2rem 1rem;
 }
 
 .navbar .container,

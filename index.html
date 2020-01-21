@@ -13,14 +13,38 @@
     <link rel="shortcut icon" href="https://opencodeiiita.github.io/dist/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <style>
-
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+        
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+        
+        .button:hover span {
+            padding-right: 25px;
+        }
+        
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
     </style>
+
 
 </head>
 
-<body class="display-4" style="background-color: gold;">
+<body class="display-4" style="background-color: rgb(248, 187, 32);">
 
-    <div class=navbar style="border-radius: 0%; background-color: #212529;">
+    <!--    <div class=navbar style="border-radius: 0%; background-color: #212529;">
         <a href="index.html">
             <i class="material-icons" style="font-size:45px; color:white">home</i>
         </a>
@@ -28,15 +52,22 @@
             <i class="material-icons" style="font-size:45px; color:white">search</i>
         </a>
     </div>
+-->
+    <br>
+    <center>
+        <h1 class="display-2"> OpenCode'20 LEADERBOARD</h1>
+        <br>
+    </center>
+    <a href="search.html">
+        <div id="searchbar" class=navbar style=" border-radius: 0%; background-color: beige;">
+
+            <button class="button btn-block"><span>search user here</span></button>
+        </div>
+    </a>
 
     <div class="container">
-
         <center>
-            <h1 class="display-2"> <strong>OPENCODE'20 LEADERBOARD</strong></h1>
             <br>
-        </center>
-
-        <center>
             <div id="loader">
                 <img src="https://lingojam.com/img/loading_nice.gif" style="width: 15%;" />
             </div>
