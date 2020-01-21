@@ -5,19 +5,43 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+  <script type="text/javascript" src="./css/bootstrap.bundle.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="shortcut icon" href="https://opencodeiiita.github.io/dist/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <style>
+  	
+  </style>
+
 </head>
-<body>
+<body class="display-4">
+
+<div class=navbar>
+  <a href="index.html"> 
+    <i class="material-icons" style="font-size:45px; color:black">home</i> 
+  </a>
+  <a href="search.html">
+    <i class="material-icons" style="font-size:45px; color:black">search</i>
+  </a>
+</div>
 
 <div class="container">
-  <center><h2>Ugly Board</h2></center>
-              <center><p> I never saw a more ugly leaderboard, we need to work on this! Dah!</p></center>
+
+
+
+  <center>
+  	<div class="bg-light border border-danger rounded mb-5">
+   <img src="img\Leaderboard.png" alt="leaderboard logo" width="120 px" style=" margin: 20px 30px;">
+   </div>
+</center>
+             
   <center><div id="loader">
     <img src="https://lingojam.com/img/loading_nice.gif" style="width: 15%;"/>
   </div></center>
-  <center><table id="leaderboard">
+	<table id="leaderboard" class="table table-success table-bordered table-hover border border-dark rounded w-100">
+
     
   </table>
 </div></center>
@@ -67,7 +91,9 @@ function sortByPoints(){
    }
 }
 
+</div>
 
-</script>
+
+<script src="main.js"></script>
 </body>
 </html>
