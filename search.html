@@ -93,14 +93,19 @@
             <h1> Search users here </h1>
         </div>
         <div class="main">
+            
             <input type="text" id="user" placeholder="Enter username">
             <button class="submitbtn" id=submit type=submit>Submit</button>
+        
         </div>
         <div id=user_icon></div>
         <div id=status></div>
         <table id=data></table>
     </center>
     <script>
+
+
+
         var myArr;
         var xmlhttp = new XMLHttpRequest();
         url = "https://fierce-everglades-19959.herokuapp.com/getData/";
@@ -112,13 +117,13 @@
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 myArr = JSON.parse(this.responseText);
+                var urlCurrent = window.location.href;
+                var splitted = urlCurrent.split('?q=')
+                if (splitted.length > 1) {
+                    document.querySelector("#user").value = splitted[1];
+                    displaydata();
+                }
             }
-        };
-
-        var urlCurrent = window.location.href;
-        var splitted = urlCurrent.split('?q=')
-        if (splitted.length > 1) {
-            document.querySelector("#user").value = splitted[1];
         }
 
 
@@ -134,7 +139,17 @@
 
 
         document.querySelector("#submit").addEventListener("click", () => {
+            var urlCurrent = window.location.href;
+            var splitted = urlCurrent.split('?q=')
+            if (splitted.length > 1) {
+                window.location.href = splitted[0] + "?q=" + document.querySelector("#user").value;
+            }
+            else{
+                window.location.href += "?q=" + document.querySelector("#user").value;
+            }
+        })
 
+        function displaydata(){
             $("table ").empty();
 
             var query = document.querySelector("#user").value;
@@ -143,36 +158,39 @@
             myArr.sort(sortByPoints());
 
             for (var i = 0; i < myArr.length; i++) {
-                if (myArr[i].username == query) {
-
-         
+                
                     var div = document.getElementById('user_icon'); 
                     div.innerHTML = '';
+                
+                if (myArr[i].username == query) {
+                    
                     var img = document.createElement('img'); 
                     img.src = myArr[i].img; 
                     img.style.height = '80px';
                     img.style.width = '80px';
+                    img.style.paddingTop = '50px';
                     div.appendChild(img);  
                     
-                    $("table ").append("<tr><td>" + "S.No." + "</td><td>" + "&nbsp;" + "Pull Requests" + "</td><td>" + "&nbsp;" + "Issues" + "</td><td>" + "Points" + "</td></tr>");
-                    document.getElementById("status").textContent = "Rank : "+ (i+1) + "-" + myArr[i].username + " : " + myArr[i].points;
+                    $("table ").append("<tr><td>" + "S.No." + "</td><td>" + "&nbsp;" + "Repository" + "</td><td>" + "&nbsp;" + "Pull Requests" + "</td><td>" +  "&nbsp;" + "Issues" + "</td><td>" + "Points" + "</td></tr>");
+                    document.getElementById("status").textContent = "Rank : "+ (i+1) + " - " + myArr[i].username + " : " + myArr[i].points;
 
                     requests = myArr[i].pullRequests;
                     issues = myArr[i].issues;
                     pointspr = myArr[i].prPoints
                     for (var j = 0; j < requests.length; j++) {
-
-                        var str1 = "Link";
+                        var pullLinkSplitted = requests[j].split("/");
+                        var str1 = "#"+pullLinkSplitted[6];
                         var resultReq = str1.link(requests[j]);
                         var brokenUrl = issues[j];
                         var issUrl = "https://github.com";
                         for (var k = 6; k < brokenUrl.length - 6; k++) {
                             issUrl += brokenUrl[k]
                         }
-                        var str2 = "Link"
+                        var issLinkSplitted = issues[j].split("/");
+                        var str2 = "#"+issLinkSplitted[5];
                         var resultIss = str2.link(issUrl)
 
-                        $("table ").append("<tr><td>"+ (j + 1) + "</td><td>" + "&nbsp;" + resultReq  + "</td><td>" + "&nbsp;" + resultIss + "</td><td>" +  "&nbsp;" + pointspr[j] + "</td></tr>" );
+                        $("table ").append("<tr><td>"+ (j + 1) + "</td><td>" + "&nbsp;" + pullLinkSplitted[4]  + "</td><td>" + "&nbsp;"  + resultReq  + "</td><td>" + "&nbsp;" + resultIss + "</td><td>" +  "&nbsp;" + pointspr[j] + "</td></tr>" );
 
                     }
                     found = 1;
@@ -183,6 +201,7 @@
                 document.getElementById("status").textContent = "No user found";
             }
             document.querySelector("#user").value = "";
-        })
+        }
+
     </script>
 </body>
