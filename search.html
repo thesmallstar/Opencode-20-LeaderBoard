@@ -42,6 +42,12 @@
             font-size: 1rem;
         }
         
+        @media (max-width: 1280px) {
+            input {
+                width: 260px;
+            }    
+        }
+
         .submitbtn {
             background-color: rgb(81, 192, 186);
             /* Green */
@@ -75,31 +81,37 @@ padding: 15px 32px;            text-align: center;
             background-color: #555555;
             color: white;
         }
+        .navbar {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
     </style>
 
 </head>
 
 <body>
-
    <center>
   	<div>
 <span><img class="header__logo" src="img/SEARCH.png" width="70%" length="60%"></span> 
         <a href="index.html" align="right">
             <button class="floatbtn" type="submit">HOME</button>
-            <!--<i class="material-icons" style="font-size:45px; color:black">home</i>-->
         </a></div>
     </center>
     <center>
+        <div style="margin-top: 70px;">
         <div>
             <h1> Search users here </h1>
         </div>
         <div class="main">
-            <input type="text" id="user" placeholder="Enter username">
-            <button class="submitbtn" id=submit type=submit>Submit</button>
+            <input class="username" type="text" id="user" placeholder="Enter username">
+            <br/>
+            <button class="submitbtn" id="submit" type=submit>Submit</button>
         </div>
         <div id=user_icon></div>
         <div id=status></div>
-        <table id=data></table>
+        <table id="data"></table>
+        </div>
     </center>
     <script>
         var myArr;
@@ -144,36 +156,39 @@ padding: 15px 32px;            text-align: center;
             myArr.sort(sortByPoints());
 
             for (var i = 0; i < myArr.length; i++) {
-                if (myArr[i].username == query) {
-
-         
+                
                     var div = document.getElementById('user_icon'); 
                     div.innerHTML = '';
+                
+                if (myArr[i].username == query) {
+                    
                     var img = document.createElement('img'); 
                     img.src = myArr[i].img; 
                     img.style.height = '80px';
                     img.style.width = '80px';
+                    img.style.marginTop = '10px';
                     div.appendChild(img);  
                     
-                    $("table ").append("<tr><td>" + "S.No." + "</td><td>" + "&nbsp;" + "Pull Requests" + "</td><td>" + "&nbsp;" + "Issues" + "</td><td>" + "Points" + "</td></tr>");
-                    document.getElementById("status").textContent = "Rank : "+ (i+1) + "-" + myArr[i].username + " : " + myArr[i].points;
+                    $("table ").append("<tr><td>" + "S.No." + "</td><td>" + "&nbsp;" + "Repository" + "</td><td>" + "&nbsp;" + "Pull Requests" + "</td><td>" +  "&nbsp;" + "Issues" + "</td><td>" + "Points" + "</td></tr>");
+                    document.getElementById("status").textContent = "Rank : "+ (i+1) + " - " + myArr[i].username + " : " + myArr[i].points;
 
                     requests = myArr[i].pullRequests;
                     issues = myArr[i].issues;
                     pointspr = myArr[i].prPoints
                     for (var j = 0; j < requests.length; j++) {
-
-                        var str1 = "Link";
+                        var pullLinkSplitted = requests[j].split("/");
+                        var str1 = "#"+pullLinkSplitted[6];
                         var resultReq = str1.link(requests[j]);
                         var brokenUrl = issues[j];
                         var issUrl = "https://github.com";
                         for (var k = 6; k < brokenUrl.length - 6; k++) {
                             issUrl += brokenUrl[k]
                         }
-                        var str2 = "Link"
+                        var issLinkSplitted = issues[j].split("/");
+                        var str2 = "#"+issLinkSplitted[5];
                         var resultIss = str2.link(issUrl)
 
-                        $("table ").append("<tr><td>"+ (j + 1) + "</td><td>" + "&nbsp;" + resultReq  + "</td><td>" + "&nbsp;" + resultIss + "</td><td>" +  "&nbsp;" + pointspr[j] + "</td></tr>" );
+                        $("table ").append("<tr><td>"+ (j + 1) + "</td><td>" + "&nbsp;" + pullLinkSplitted[4]  + "</td><td>" + "&nbsp;"  + resultReq  + "</td><td>" + "&nbsp;" + resultIss + "</td><td>" +  "&nbsp;" + pointspr[j] + "</td></tr>" );
 
                     }
                     found = 1;
