@@ -82,8 +82,8 @@ function addTop5images(arr){
          link.href = "search.html?q="+arr[i].username;
          var imgd = document.createElement('img'); 
          imgd.src = "./img/link.svg"; 
-         imgd.style.height = '1em';
-         imgd.style.width = '1em';
+         imgd.style.height = '0.5em';
+         imgd.style.width = '0.5em';
         
          var breakl3 = document.createElement('br'); 
          div.appendChild(breakl3);

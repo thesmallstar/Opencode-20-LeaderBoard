@@ -12,6 +12,7 @@
 
 html, body{
     overflow-x: hidden;
+    align-items: center;
 }
 #fifth, #first, #second, #third, #fourth{
     /* font-size: 30px; */
@@ -19,9 +20,10 @@ html, body{
     /* font-size-adjust: initial; */
     color: #000000;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    align-content: center;
+    align-content: stretch;
 }
 #top5head{
     background-color: #f0efc0;
+    align-content: center;
 }
 
