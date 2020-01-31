@@ -16,7 +16,7 @@ html, body{
 #fifth, #first, #second, #third, #fourth{
     /* font-size: 30px; */
     text-align : center;
-    font-size-adjust: inherit;
+    /* font-size-adjust: initial; */
     color: #000000;
     font-family: Georgia, 'Times New Roman', Times, serif;
     align-content: center;
