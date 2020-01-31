@@ -14,7 +14,7 @@ html, body{
     overflow-x: hidden;
 }
 #fifth, #first, #second, #third, #fourth{
-    font-size: 30px;
+    /* font-size: 30px; */
     text-align : center;
     font-size-adjust: inherit;
     color: #000000;
