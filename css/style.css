@@ -13,4 +13,15 @@
 html, body{
     overflow-x: hidden;
 }
+#fifth, #first, #second, #third, #fourth{
+    font-size: 30px;
+    text-align : center;
+    font-size-adjust: inherit;
+    color: #000000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    align-content: center;
+}
+#top5head{
+    background-color: #f0efc0;
+}
 
