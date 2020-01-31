@@ -48,8 +48,8 @@ function addTop5images(arr){
    arr.sort(sortByPoints());
       var ids = ['first', 'second', 'third', 'fourth', 'fifth'];
       var div = document.getElementById("top5");
-      div.className = "row table table-success table-bordered table-hover border border-dark rounded w-100";
-      div.style = "font-size: 0.8em; font-weight: bold; align-self: auto; column-width:auto; margin-bottom: 10px; padding-top: 10px; padding-bottom: 10px;"
+      // div.className = "row table table-success table-bordered table-hover border border-dark rounded w-100";
+      // div.style = "font-size: 10px; font-weight: bold;  margin-bottom: 10px; padding-top: 10px; padding-bottom: 10px;"
       
       for(var i=0;i<5;i++)
       {
@@ -57,8 +57,9 @@ function addTop5images(arr){
          div.innerHTML = '';
          var img = document.createElement('img'); 
          img.src = arr[i].img; 
-         img.style.height = '5em';
+         img.style.height='5em'
          img.style.width = '5em';
+         img.style.position ='center';
          div.appendChild(img);
          var breakl = document.createElement('br'); 
          div.appendChild(breakl);
@@ -68,15 +69,22 @@ function addTop5images(arr){
          div.append(markup);
          var breakl2 = document.createElement('br'); 
          div.appendChild(breakl2);
+         
          var markup2 = document.createElement('html');
-         markup2 = arr[i].username + " |" + arr[i].points + "|";
+         markup2 = arr[i].username;
+         
          div.append(markup2);
+         var breakl4 = document.createElement('br'); 
+         div.appendChild(breakl4);
+         var score= " |" + arr[i].points + "|";
+         div.append(score);
         var link = document.createElement('a');
          link.href = "search.html?q="+arr[i].username;
          var imgd = document.createElement('img'); 
          imgd.src = "./img/link.svg"; 
-         imgd.style.height = '1em';
-         imgd.style.width = '1em';
+         imgd.style.height = '0.5em';
+         imgd.style.width = '0.5em';
+        
          var breakl3 = document.createElement('br'); 
          div.appendChild(breakl3);
          link.appendChild(imgd);

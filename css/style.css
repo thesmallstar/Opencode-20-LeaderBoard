@@ -10,3 +10,20 @@
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
+html, body{
+    overflow-x: hidden;
+    align-items: center;
+}
+#fifth, #first, #second, #third, #fourth{
+    /* font-size: 30px; */
+    text-align : center;
+    /* font-size-adjust: initial; */
+    color: #000000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    align-content: stretch;
+}
+#top5head{
+    background-color: #f0efc0;
+    align-content: center;
+}
+
